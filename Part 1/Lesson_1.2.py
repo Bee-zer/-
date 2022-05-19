@@ -19,7 +19,7 @@ def get_data(service, appid,city):
 appid = 'e8df6ef1f00a4e5b8f6175322221905'
 service = 'http://api.weatherapi.com/v1/forecast.json?key=e8df6ef1f00a4e5b8f6175322221905&q=saint-petersburg&days=5&aqi=no&alerts=no'
 city = 'Saint-petersburg'
-# city ='Manchester,uk'
+
 response = get_data(service, appid, city)
 
 print('Получен результат')
