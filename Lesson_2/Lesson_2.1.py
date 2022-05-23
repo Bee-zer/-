@@ -4,18 +4,16 @@ import requests
 
 base_url = 'https://spb.hh.ru/search/vacancy'
 
-headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36'}
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36'}
 
 keyword = input('Введите вакансию: ')
 
-url = f'{base_url}/{keyword}'
+url = f"{base_url}/{keyword}"
 response = requests.get(url, headers=headers)
 dom = bs(response.text, 'html.parser')
 vacancies = dom.find_all('div', {'class': 'vacancy-serp-item'})
 
 
-# функция перебора страниц
 def max_num():
     maxnum = 0
     for item in dom.find_all('a', {'data-qa': 'pager-page'}):
@@ -26,7 +24,6 @@ def max_num():
 max_page = int(max_num())
 
 
-# Функция сбора данных
 def data_collect(pages):
     vacancies_list = []
     for page in range(pages):
@@ -86,7 +83,6 @@ def data_collect(pages):
 data = data_collect(max_page)
 
 
-# Сохранение в json
 def data_to_json(data):
     with open(f'{keyword}.json', 'w', encoding='utf-8') as file:
         json.dump(data, file, ensure_ascii=False, indent=4)
