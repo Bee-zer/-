@@ -27,7 +27,6 @@ for el in news_list:
 
     news.append(info)
 
-
 #2
 
 client = MongoClient('127.0.0.1', 27017)
