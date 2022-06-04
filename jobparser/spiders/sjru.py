@@ -24,4 +24,3 @@ class SjruSpider(scrapy.Spider):
         salary = response.xpath('//span[@class = "-gENC _1TcZY mO3i1 dAWx1"]//text()').getall()
         url = response.url
         yield JobparserItem(name=name, salary=salary, url=url)
-
