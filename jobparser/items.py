@@ -14,3 +14,4 @@ class JobparserItem(scrapy.Item):
     currency = scrapy.Field()
     url = scrapy.Field()
     _id = scrapy.Field()
+

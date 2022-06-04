@@ -80,3 +80,4 @@ class JobparserPipeline:
 
 
         return min_salary, max_salary, currency
+
