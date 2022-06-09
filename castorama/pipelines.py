@@ -77,4 +77,3 @@ class CastoramaPhotosPipeline(ImagesPipeline):
         image_filename = f'full/{title}/{image_url_hash}_{image_url_hash[3]}.jpg'
 
         return image_filename
-
