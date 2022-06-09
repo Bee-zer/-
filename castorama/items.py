@@ -13,3 +13,4 @@ class CastoramaItem(scrapy.Item):
     url = scrapy.Field(output_processor=TakeFirst())
     photos = scrapy.Field()
     _id = scrapy.Field()
+
